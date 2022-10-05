@@ -1,0 +1,11 @@
+version: '3'
+services:
+    backend_api:
+        # image:
+        container_name: backend_api
+        build:
+            context: .
+            dockerfile: ./Dockerfile
+        restart: always
+        ports:
+            - "5000:5000"

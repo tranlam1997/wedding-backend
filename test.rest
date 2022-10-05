@@ -1,0 +1,75 @@
+GET http://127.0.0.1:3000/user/6
+
+###
+GET http://127.0.0.1:5000/events
+
+###
+GET http://127.0.0.1:5000/customers/3
+###
+
+###
+GET http://127.0.0.1:5000/address/provinces
+###
+GET http://127.0.0.1:5000/address/provinces/02/districts
+###
+GET http://127.0.0.1:5000/address/districts/002/wards
+###
+GET http://127.0.0.1:5000/places
+
+###
+GET http://127.0.0.1:5000/customers/findByPhone?phone=0904309486
+
+###
+POST http://127.0.0.1:5000/event_types dd
+content-type: application/json   dddd
+
+{ "name": "Tiệc", "color": "#007AFF" }
+
+###
+
+POST http://127.0.0.1:5000/places
+content-type: application/json
+
+{
+    "place": { "name": "Shapphia" }
+}
+###
+//title, guest_estimate, start_time, end_time, type_id, place_id, deposit
+POST http://127.0.0.1:5000/events
+content-type: application/json
+
+{
+    "event": { 
+        "title": "Tiệc cưới chú Tuấn",
+        "guest_estimate":"Khoảng 500 khách",
+        "start_time": 1663815600000,
+        "end_time":1663822800000,
+        "type_id": 1,
+        "place_id": 4,
+        "deposit": 10000000
+    }
+}
+###
+PUT http://127.0.0.1:5000/events/1
+content-type: application/json
+
+{
+    "title": "Tiệc cưới chú ABC",
+    "guest_estimate":"Khoảng 50 khách",
+    "start_time": 1663815600000,
+    "end_time":1663822800000,
+    "type_id": 1,
+    "place_id": 2,
+    "deposit": 10000000
+}
+###
+PUT http://127.0.0.1:3000/user/1
+content-type: application/json
+
+{
+    "user": { "name": "hoang thai ", "email": "hoangthai0302@mgail.com" }
+}
+
+###
+
+DELETE http://127.0.0.1:3000/user/6
